@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/netextensions/MockApiBuilder.SqLite</RepositoryUrl>
     <PackageTags>MockApiBuilder, mock api,.net core</PackageTags>
     <PackageId>NetExtensions.MockApiBuilder.SqLite</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>netextensions.io</Authors>
     <PackageIcon>icon.png</PackageIcon>
@@ -25,7 +25,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
-    <PackageReference Include="NetExtensions.Extensions.SqLite" Version="1.0.1" />
+    <PackageReference Include="NetExtensions.Extensions.SqLite" Version="1.0.2" />
     <PackageReference Include="NetExtensions.ServiceHostBuilder" Version="1.0.0" /> 
     <PackageReference Include="NetExtensions.Extensions.SwashbuckleWithOauth" Version="1.0.0" />
     <PackageReference Include="NetExtensions.Extensions.SerilogApplicationBuilder" Version="1.0.0" />

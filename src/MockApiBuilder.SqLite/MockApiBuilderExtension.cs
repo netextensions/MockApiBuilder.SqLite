@@ -10,7 +10,7 @@ namespace NetExtensions
 {
     public static class MockApiBuilderExtension
     {
-        public static IServiceCollection AddMockApi<TContext, TAutoMapper, TMediatR>(this IServiceCollection services, string connectionString,
+        public static IServiceCollection AddMockApi<TContext, TAutoMapper, TMediatR>(this IServiceCollection services, string sqliteDbPath,
              string swaggerTitle = null,
             string swaggerDescription = null,
             string swaggerVersion = null)
@@ -18,18 +18,18 @@ namespace NetExtensions
         {
             services.AddSwashbuckle(swaggerTitle, swaggerDescription, swaggerVersion);
             services.AddControllers().AddNewtonsoftJson();
-            services.AddSqliteDb<TContext>(connectionString);
+            services.AddSqliteDb<TContext>(sqliteDbPath);
             services.AddAutoMapper(typeof(TAutoMapper).Assembly);
             services.AddMediatR(typeof(TMediatR).Assembly);
             return services;
         }
-        public static IServiceCollection AddMockApi<TContext, TAutoMapperMediatR>(this IServiceCollection services, string connectionString,
+        public static IServiceCollection AddMockApi<TContext, TAutoMapperMediatR>(this IServiceCollection services, string sqliteDbPath,
             string swaggerTitle = null,
             string swaggerDescription = null,
             string swaggerVersion = null)
             where TContext : DbContext
         {
-            return services.AddMockApi<TContext, TAutoMapperMediatR, TAutoMapperMediatR>(connectionString, swaggerTitle, swaggerDescription, swaggerVersion);
+            return services.AddMockApi<TContext, TAutoMapperMediatR, TAutoMapperMediatR>(sqliteDbPath, swaggerTitle, swaggerDescription, swaggerVersion);
         }
 
         public static IApplicationBuilder UseMockApi(this IApplicationBuilder app, IWebHostEnvironment env, string swaggerName = null,
